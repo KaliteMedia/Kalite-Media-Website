@@ -369,10 +369,7 @@ We basically handle the stuff you keep putting off.</p>
       const modal = document.getElementById('portfolioModal');
       const modalContent = document.getElementById('modalContent');
       const portfolioCards = [...document.querySelectorAll('.portfolio-card')];
-
-      <img id="casa-sea-la-vie" src="images/house">
-      <img id="horses" src="images/horses">
-
+      
       portfolioCards.forEach((card, index) => {
         card.addEventListener('click', () => {
           if (index === 0) {
@@ -381,13 +378,13 @@ We basically handle the stuff you keep putting off.</p>
               {
                 title: 'Casa Sea La Vie',
                 subtitle: 'Vacation Rental Social Media Marketing',
-                imageId: 'casa-sea-la-vie',
+                imageId: 'portfolio-image-5',
                 pdfUrl: 'https://drive.google.com/file/d/1wvtDFkbUb2Ukai2bp69aOQBgfN7B3tmd/view?usp=sharing'
               },
               {
                 title: 'Horses of Hope / Caballos de Esperanza',
                 subtitle: 'Increasing awareness, engagement, and support for a non-profit',
-                imageId: 'horses',
+                imageId: 'print-slide-2',
                 pdfUrl: 'https://drive.google.com/file/d/1EW8tQxuUogmHI0antQnBFEXZskCW2Gcp/view?usp=sharing'
               }
             ];
