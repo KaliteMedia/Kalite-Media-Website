@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260723-05-e9a76f4"}');</script><script src="/_sdk/e358eac22bd01364.telemetry_sdk.js" integrity="sha512-KPxp3rw4K8Nu9ceWJc3gyM7srgaZxiFWOVbyu260EYzzAqdz10mfo5xyXrCx+wEKtGo77JbtmwXvFLbwrGzwvw=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalite Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&amp;family=Yeseva+One&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" defer=""></script>
+  <style>
+    :root{--coral:#fe793d;--blue:#95bddc;--sage:#aecba9;--pink:#ffc4d6;--cream:#fbf6f3;--dark:#2f3e46;}
+    html{scroll-behavior:smooth;scroll-padding-top:80px;}
+    body{margin:0;font-family:'Josefin Sans', sans-serif;color:var(--dark);background:var(--cream);}
+    .display{font-family:'Yeseva One', serif;}
+    .soft-shadow{box-shadow:0 14px 34px rgba(47,62,70,.08);}
+    .section-pad{padding:110px 24px;}
+    .nav-link{position:relative;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600;}
+    .nav-link:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:2px;background:var(--coral);transition:width .25s ease;}
+    .nav-link:hover:after{width:100%;}
+    .blob{position:absolute;border-radius:40% 60% 50% 50%;filter:blur(.2px);opacity:.65;z-index:0;}
+    .service-card .details{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .service-card.open .details{max-height:180px;}
+    .service-card.open .chev{transform:rotate(180deg);}
+    .chev{transition:transform .25s ease;}
+    .portfolio-card img{transition:transform .45s ease, filter .45s ease;will-change:transform;}
+    .portfolio-card:hover img{transform:scale(1.05);filter:saturate(1.05);}
+    .portfolio-card:hover .portfolio-overlay{background:transparent;}
+    .testimonial-slide{display:none;}
+    .testimonial-slide.active{display:block;}
+    .dot.active{background:var(--coral); transform:scale(1.2);}
+    .focus-ring:focus-visible{outline:3px solid rgba(254,121,61,.45);outline-offset:3px;}
+    @media(max-width:767px){.section-pad{padding:78px 20px;}}
+  </style>
+  <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" defer="" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
+  <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" defer="" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full" style="background: rgba(255, 196, 214, 0.22);">
+  <header data-template-id="site-header" class="canva-header sticky top-0 z-50 border-b border-[#eadfd9]/70" style="background: rgb(251, 246, 243);">
+   <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+    <a href="#top" data-template-id="logo-text" class="canva-text display text-[28px] leading-none focus-ring" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Kalite Media</a>
+    <nav class="hidden lg:flex items-center gap-8" aria-label="Primary">
+     <a href="#about" data-template-id="nav-about" class="canva-link nav-link focus-ring" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">About</a> <a href="#services" data-template-id="nav-services" class="canva-link nav-link focus-ring" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Services</a> <a href="#portfolio" data-template-id="nav-work" class="canva-link nav-link focus-ring" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Work</a> <a href="#testimonials" data-template-id="nav-testimonials" class="canva-link nav-link focus-ring" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Testimonials</a>
+    </nav>
+    <div class="hidden lg:block">
+     <a href="#contact" data-template-id="nav-cta" class="canva-button inline-flex items-center rounded-full px-5 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 hover:opacity-90 focus-ring" style="background: rgb(254, 121, 61); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Let's Work Together</a>
+    </div><button id="menuButton" class="lg:hidden p-2 rounded-full border border-[#e8ded8] focus-ring" aria-label="Open navigation" aria-expanded="false"> <i data-lucide="menu" class="w-5 h-5"></i> </button>
+   </div>
+   <div id="mobileMenu" class="hidden lg:hidden border-t border-[#eadfd9] px-5 py-4">
+    <nav class="flex flex-col gap-4" aria-label="Mobile">
+     <a href="#about" data-template-id="mobile-nav-about" class="canva-link text-sm uppercase tracking-[0.12em] font-semibold" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">About</a> <a href="#services" data-template-id="mobile-nav-services" class="canva-link text-sm uppercase tracking-[0.12em] font-semibold" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Services</a> <a href="#portfolio" data-template-id="mobile-nav-work" class="canva-link text-sm uppercase tracking-[0.12em] font-semibold" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Work</a> <a href="#testimonials" data-template-id="mobile-nav-testimonials" class="canva-link text-sm uppercase tracking-[0.12em] font-semibold" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Testimonials</a> <a href="#contact" data-template-id="mobile-nav-cta" class="canva-button mt-2 inline-flex w-fit rounded-full px-5 py-3 text-sm font-semibold" style="background: rgb(254, 121, 61); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Let's Work Together</a>
+    </nav>
+   </div>
+  </header>
+  <main id="top">
+   <section data-template-id="hero-section" class="canva-section relative overflow-hidden px-5 md:px-8 py-24 md:py-32" style="background: rgb(251, 246, 243);">
+    <div class="blob w-52 h-52 bg-[#ffc4d6] -left-16 top-16"></div>
+    <div class="blob w-44 h-44 bg-[#aecba9] right-[-70px] top-32"></div>
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+     <p data-template-id="hero-eyebrow" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold mb-6" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 16px;">Small business marketing, minus the chaos</p>
+     <h1 data-template-id="hero-title" class="canva-text display leading-[1.08] max-w-6xl mx-auto whitespace-pre-line" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 56px; line-height: 1.08;">Your go-to for making your business look like it has its life
+together.</h1>
+     <p data-template-id="hero-subtitle" class="canva-text max-w-2xl mx-auto mt-7 leading-8" style="color: rgba(47, 62, 70, 0.74); font-weight: 400; font-style: normal; font-size: 19px; letter-spacing: 0.074rem; line-height: 1.86;">Social Media Management. Website &amp; Graphic Design. Admin Support.
+We basically handle the stuff you keep putting off.</p>
+     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+      <a href="#contact" data-template-id="hero-primary" class="canva-button rounded-full px-7 py-4 font-semibold transition duration-300 hover:-translate-y-1 hover:opacity-90 focus-ring" style="background: rgb(254, 121, 61); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Let's Get Started</a>
+      <div class="relative">
+       <a href="#portfolio" data-template-id="hero-secondary" class="canva-button rounded-full px-7 py-4 font-semibold border transition duration-300 hover:-translate-y-1 hover:bg-[#fff2ec] focus-ring" style="background: transparent; color: rgb(254, 121, 61); font-weight: 600; font-style: normal; font-size: 16px;">See Our Work</a>
+       <div class="absolute -right-8 top-6 pointer-events-none">
+        <div data-template-id="hero-note" class="canva-text text-sm italic rotate-[-2deg]" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 15px;">basically your business's new right hand ✷</div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="about" data-template-id="about-section" class="canva-section section-pad" style="background: rgba(149, 189, 220, 0.16);">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+     <div class="relative">
+      <div class="absolute -left-4 -bottom-4 w-32 h-32 rounded-[32px] bg-[#ffc4d6] opacity-70"></div>
+      <div class="absolute -right-5 -top-5 w-24 h-24 rounded-full bg-[#aecba9] opacity-70"></div>
+      <div class="relative rounded-[28px] overflow-hidden soft-shadow">
+       <img data-template-id="about-image" loading="lazy" class="canva-image w-full h-[480px] object-cover object-center" src="canva://MAHPmOs5nSQ/1" alt="Kalite Media logo graphic on orange background with crescent moon and stars">
+      </div>
+     </div>
+     <div>
+      <p data-template-id="about-kicker" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold mb-4" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 16px;">About us</p>
+      <h2 data-template-id="about-title" class="canva-text display leading-tight" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 24px;">Hi, we're Kalite Media</h2>
+      <p data-template-id="about-copy" class="canva-text mt-6 leading-8" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.8;">We help small businesses, entrepreneurs, and non-profit organizations show up consistently without the stress of doing it all themselves. From content creation to social media management to website design and admin assistance, we basically handle the things you keep putting off. If you've been saying “I need to get this done” for the past 3 months... this is your sign.</p><a href="#services" data-template-id="about-link" class="canva-link inline-flex items-center gap-2 mt-7 font-semibold group focus-ring" style="color: rgb(254, 121, 61); font-weight: 600; font-style: normal; font-size: 16px;">See what we offer</a>
+     </div>
+    </div>
+   </section>
+   <section id="services" data-template-id="services-section" class="canva-section section-pad" style="background: rgb(251, 246, 243);">
+    <div class="max-w-6xl mx-auto">
+     <div class="max-w-2xl mb-14 mx-auto text-center">
+      <p data-template-id="services-kicker" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold mb-4" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 16px;">Services</p>
+      <h2 data-template-id="services-title" class="canva-text display" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 24px;">What We Do</h2>
+      <p data-template-id="services-intro" class="canva-text mt-5 leading-7" style="color: rgba(47, 62, 70, 0.74); font-weight: 400; font-style: normal; font-size: 16px;">Think of us as the extra pair of hands your business has been quietly begging for.</p>
+     </div>
+     <div class="grid md:grid-cols-2 gap-5">
+      <article data-template-id="service-card-1" class="canva-card service-card rounded-[24px] border p-6 transition duration-300 hover:-translate-y-1 hover:soft-shadow" style="background: rgb(255, 253, 251);">
+       <button class="w-full text-left focus-ring" type="button">
+        <div class="flex justify-between items-start gap-5">
+         <div>
+          <div data-template-id="service-icon-1" class="canva-text text-2xl mb-5" style="color: rgb(254, 121, 61); font-weight: 400; font-style: normal; font-size: 16px;">✦</div>
+          <h3 data-template-id="service-title-1" class="canva-text font-semibold" style="color: rgb(47, 62, 70); font-weight: 700; font-style: normal; font-size: 21px;">Organic Social Media Marketing</h3>
+          <p data-template-id="service-copy-1" class="canva-text mt-3 leading-6" style="color: rgba(47, 62, 70, 0.76); font-weight: 400; font-style: normal; font-size: 16px;">Strategy, content creation, and full account management so you actually show up online.</p>
+         </div><i data-lucide="chevron-down" class="chev w-5 h-5 mt-1"></i>
+        </div></button>
+       <div class="details">
+        <ul class="mt-5 space-y-2 text-sm leading-6 list-disc pl-5">
+         <li data-template-id="service-detail-1a" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Monthly strategy and content planning</li>
+         <li data-template-id="service-detail-1b" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Captions, graphics, and scheduling</li>
+         <li data-template-id="service-detail-1c" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Consistent presence without the panic-posting</li>
+        </ul>
+       </div>
+      </article>
+      <article data-template-id="service-card-2" class="canva-card service-card rounded-[24px] border p-6 transition duration-300 hover:-translate-y-1 hover:soft-shadow" style="background: rgb(255, 253, 251);">
+       <button class="w-full text-left focus-ring" type="button">
+        <div class="flex justify-between items-start gap-5">
+         <div>
+          <div data-template-id="service-icon-2" class="canva-text text-2xl mb-5" style="color: rgb(149, 189, 220); font-weight: 400; font-style: normal; font-size: 16px;">⌘</div>
+          <h3 data-template-id="service-title-2" class="canva-text font-semibold" style="color: rgb(47, 62, 70); font-weight: 700; font-style: normal; font-size: 21px;">Website Design</h3>
+          <p data-template-id="service-copy-2" class="canva-text mt-3 leading-6" style="color: rgba(47, 62, 70, 0.76); font-weight: 400; font-style: normal; font-size: 16px;">Clean, functional sites built on Wix, Squarespace, or Hostinger.</p>
+         </div><i data-lucide="chevron-down" class="chev w-5 h-5 mt-1"></i>
+        </div></button>
+       <div class="details">
+        <ul class="mt-5 space-y-2 text-sm leading-6 list-disc pl-5">
+         <li data-template-id="service-detail-2a" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Clean layouts that are easy to navigate</li>
+         <li data-template-id="service-detail-2b" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Built for service-based businesses</li>
+         <li data-template-id="service-detail-2c" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Simple, polished, and ready to share</li>
+        </ul>
+       </div>
+      </article>
+      <article data-template-id="service-card-3" class="canva-card service-card rounded-[24px] border p-6 transition duration-300 hover:-translate-y-1 hover:soft-shadow" style="background: rgb(255, 253, 251);">
+       <button class="w-full text-left focus-ring" type="button">
+        <div class="flex justify-between items-start gap-5">
+         <div>
+          <div data-template-id="service-icon-3" class="canva-text text-2xl mb-5" style="color: rgb(174, 203, 169); font-weight: 400; font-style: normal; font-size: 16px;">◎</div>
+          <h3 data-template-id="service-title-3" class="canva-text font-semibold" style="color: rgb(47, 62, 70); font-weight: 700; font-style: normal; font-size: 21px;">Portfolio Design</h3>
+          <p data-template-id="service-copy-3" class="canva-text mt-3 leading-6" style="color: rgba(47, 62, 70, 0.76); font-weight: 400; font-style: normal; font-size: 16px;">Canva-based portfolio sites that make your work look polished and professional.</p>
+         </div><i data-lucide="chevron-down" class="chev w-5 h-5 mt-1"></i>
+        </div></button>
+       <div class="details">
+        <ul class="mt-5 space-y-2 text-sm leading-6 list-disc pl-5">
+         <li data-template-id="service-detail-3a" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Curated structure for your best work</li>
+         <li data-template-id="service-detail-3b" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Designed in Canva for easy updates</li>
+         <li data-template-id="service-detail-3c" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Perfect for creatives and service pros</li>
+        </ul>
+       </div>
+      </article>
+      <article data-template-id="service-card-4" class="canva-card service-card rounded-[24px] border p-6 transition duration-300 hover:-translate-y-1 hover:soft-shadow" style="background: rgb(255, 253, 251);">
+       <button class="w-full text-left focus-ring" type="button">
+        <div class="flex justify-between items-start gap-5">
+         <div>
+          <div data-template-id="service-icon-4" class="canva-text text-2xl mb-5" style="color: rgb(255, 196, 214); font-weight: 400; font-style: normal; font-size: 16px;">✎</div>
+          <h3 data-template-id="service-title-4" class="canva-text font-semibold" style="color: rgb(47, 62, 70); font-weight: 700; font-style: normal; font-size: 21px;">Graphic Design</h3>
+          <p data-template-id="service-copy-4" class="canva-text mt-3 leading-6" style="color: rgba(47, 62, 70, 0.76); font-weight: 400; font-style: normal; font-size: 16px;">Flyers, social content, ebooks, promo materials, branding assets, and more using Canva.</p>
+         </div><i data-lucide="chevron-down" class="chev w-5 h-5 mt-1"></i>
+        </div></button>
+       <div class="details">
+        <ul class="mt-5 space-y-2 text-sm leading-6 list-disc pl-5">
+         <li data-template-id="service-detail-4a" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">On-brand marketing collateral</li>
+         <li data-template-id="service-detail-4b" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Social templates and digital assets</li>
+         <li data-template-id="service-detail-4c" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Pretty and practical, always</li>
+        </ul>
+       </div>
+      </article>
+      <article data-template-id="service-card-5" class="canva-card service-card rounded-[24px] border p-6 transition duration-300 hover:-translate-y-1 hover:soft-shadow md:col-span-2" style="background: rgb(255, 253, 251);">
+       <button class="w-full text-left focus-ring" type="button">
+        <div class="flex justify-between items-start gap-5">
+         <div>
+          <div data-template-id="service-icon-5" class="canva-text text-2xl mb-5" style="color: rgb(254, 121, 61); font-weight: 400; font-style: normal; font-size: 16px;">✓</div>
+          <h3 data-template-id="service-title-5" class="canva-text font-semibold" style="color: rgb(47, 62, 70); font-weight: 700; font-style: normal; font-size: 21px;">Virtual and Admin Assistance</h3>
+          <p data-template-id="service-copy-5" class="canva-text mt-3 leading-6" style="color: rgba(47, 62, 70, 0.76); font-weight: 400; font-style: normal; font-size: 16px;">Backend business support so the operational stuff stops falling through the cracks.</p>
+         </div><i data-lucide="chevron-down" class="chev w-5 h-5 mt-1"></i>
+        </div></button>
+       <div class="details">
+        <ul class="mt-5 space-y-2 text-sm leading-6 list-disc pl-5">
+         <li data-template-id="service-detail-5a" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Inbox, scheduling, and backend support</li>
+         <li data-template-id="service-detail-5b" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Systems and admin clean-up</li>
+         <li data-template-id="service-detail-5c" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">The little tasks that keep things moving</li>
+        </ul>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="pricing" data-template-id="pricing-section" class="canva-section section-pad hidden" style="background: rgba(255, 196, 214, 0.22);">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center max-w-2xl mx-auto mb-14">
+      <p data-template-id="pricing-kicker" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold mb-4" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 16px;">Packages</p>
+      <h2 data-template-id="pricing-title" class="canva-text display" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 24px;">Simple, Transparent Pricing</h2>
+      <p data-template-id="pricing-subtitle" class="canva-text mt-5 leading-7" style="color: rgba(47, 62, 70, 0.74); font-weight: 400; font-style: normal; font-size: 16px;">No guessing games. Here's exactly what you get.</p>
+     </div>
+     <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+      <article data-template-id="price-card-1" class="canva-card rounded-[26px] p-8 border bg-white/80 flex flex-col" style="background: rgb(255, 253, 251);">
+       <h3 data-template-id="price-name-1" class="canva-text display" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 19px;">The Sidekick</h3>
+       <p data-template-id="price-label-1" class="canva-text text-sm mt-4" style="color: rgba(47, 62, 70, 0.68); font-weight: 400; font-style: normal; font-size: 16px;">Starting at</p>
+       <p data-template-id="price-amount-1" class="canva-text font-semibold mt-1" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 28px;">$450/month</p>
+       <ul class="mt-6 space-y-2 text-sm leading-6 list-disc pl-5 flex-grow">
+        <li data-template-id="price-1-item-1" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">2 social media platforms</li>
+        <li data-template-id="price-1-item-2" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">12 posts/month</li>
+        <li data-template-id="price-1-item-3" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Custom graphics + captions</li>
+        <li data-template-id="price-1-item-4" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">3 hours of VA support</li>
+       </ul><a href="#contact" data-template-id="price-button-1" class="canva-button inline-flex mt-6 rounded-full px-6 py-3 font-semibold transition duration-300 hover:-translate-y-1" style="background: rgb(254, 121, 61); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Get Started</a>
+      </article>
+      <article data-template-id="price-card-2" class="canva-card rounded-[26px] p-8 border bg-white relative overflow-hidden soft-shadow lg:-translate-y-4 flex flex-col" style="background: rgb(255, 253, 251);">
+       <div class="absolute top-0 left-0 right-0 h-2 bg-[#fe793d]"></div>
+       <div data-template-id="price-badge-2" class="canva-tag inline-flex rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.14em] font-semibold mb-4" style="background: rgb(255, 196, 214); color: rgb(47, 62, 70); font-weight: 700; font-style: normal; font-size: 16px;">Most Popular</div>
+       <h3 data-template-id="price-name-2" class="canva-text display" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 19px;">The Co-Pilot</h3>
+       <p data-template-id="price-label-2" class="canva-text text-sm mt-4" style="color: rgba(47, 62, 70, 0.68); font-weight: 400; font-style: normal; font-size: 16px;">Starting at</p>
+       <p data-template-id="price-amount-2" class="canva-text font-semibold mt-1" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 28px;">$650/month</p>
+       <ul class="mt-6 space-y-2 text-sm leading-6 list-disc pl-5 flex-grow">
+        <li data-template-id="price-2-item-1" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">3 social media platforms</li>
+        <li data-template-id="price-2-item-2" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">16 posts/month</li>
+        <li data-template-id="price-2-item-3" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Custom graphics + captions</li>
+        <li data-template-id="price-2-item-5" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">6 hours of VA support</li>
+        <li data-template-id="price-2-item-6" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Monthly performance report</li>
+       </ul><a href="#contact" data-template-id="price-button-2" class="canva-button inline-flex mt-6 rounded-full px-6 py-3 font-semibold transition duration-300 hover:-translate-y-1" style="background: rgb(254, 121, 61); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Get Started</a>
+      </article>
+      <article data-template-id="price-card-3" class="canva-card rounded-[26px] p-8 border bg-white/80 flex flex-col" style="background: rgb(255, 253, 251);">
+       <h3 data-template-id="price-name-3" class="canva-text display" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 19px;">The Full Team</h3>
+       <p data-template-id="price-label-3" class="canva-text text-sm mt-4" style="color: rgba(47, 62, 70, 0.68); font-weight: 400; font-style: normal; font-size: 16px;">Starting at</p>
+       <p data-template-id="price-amount-3" class="canva-text font-semibold mt-1" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 28px;">$1,000/month</p>
+       <ul class="mt-6 space-y-2 text-sm leading-6 list-disc pl-5 flex-grow">
+        <li data-template-id="price-3-item-1" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">3 social media platforms</li>
+        <li data-template-id="price-3-item-2" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">20 posts/month</li>
+        <li data-template-id="price-3-item-3" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Custom graphics + captions</li>
+        <li data-template-id="price-3-item-4" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Video editing</li>
+        <li data-template-id="price-3-item-5" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Community engagement</li>
+        <li data-template-id="price-3-item-6" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">10 hours of VA support</li>
+        <li data-template-id="price-3-item-7" class="canva-text" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Monthly performance report</li>
+       </ul><a href="#contact" data-template-id="price-button-3" class="canva-button inline-flex mt-6 rounded-full px-6 py-3 font-semibold transition duration-300 hover:-translate-y-1" style="background: rgb(254, 121, 61); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Get Started</a>
+      </article>
+     </div>
+     <p data-template-id="pricing-note" class="canva-text text-center italic mt-10" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 16px;">Need something custom? We're flexible! Reach out and let's figure it out.
+</p>
+    </div>
+   </section>
+   <section id="portfolio" data-template-id="portfolio-section" class="canva-section section-pad" style="background: rgb(252, 235, 236);">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center max-w-2xl mx-auto mb-14">
+      <p data-template-id="work-kicker" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold mb-4" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 16px;">Our Work</p>
+      <h2 data-template-id="work-title" class="canva-text display" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 24px;">Stuff We've Made</h2>
+      <p data-template-id="work-intro" class="canva-text mt-5 leading-7" style="color: rgba(47, 62, 70, 0.74); font-weight: 400; font-style: normal; font-size: 16px;">A little peek at what we've been building for our clients.</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+      <button class="portfolio-card relative overflow-hidden rounded-[24px] group focus-ring" data-index="0" type="button"> <img data-template-id="portfolio-image-1" loading="lazy" class="canva-image w-full h-72 object-cover" decoding="async" src="canva://MAHMYNBY09I/1" alt="Smartphone with heart notification icons against a pink background, representing social media engagement">
+       <div class="portfolio-overlay absolute inset-0 transition duration-300 flex items-end p-5">
+        <p data-template-id="portfolio-label-1" class="canva-text text-white font-semibold" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Client Work — Social Media</p>
+       </div></button> <button class="portfolio-card relative overflow-hidden rounded-[24px] group focus-ring" data-index="1" type="button"> <img data-template-id="portfolio-image-2" loading="lazy" class="canva-image w-full h-72 object-cover" decoding="async" src="canva://MAHLz-A-ITA/1" alt="Casa Sea La Vie business cards and brochure mockup in pink and teal">
+       <div class="portfolio-overlay absolute inset-0 transition duration-300 flex items-end p-5">
+        <p data-template-id="portfolio-label-2" class="canva-text text-white font-semibold" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Client Work — Print &amp; Graphic Design</p>
+       </div></button> <button class="portfolio-card relative overflow-hidden rounded-[24px] group focus-ring" data-index="2" type="button"> <img data-template-id="portfolio-image-3" loading="lazy" class="canva-image w-full h-72 object-cover" style="object-position: center 30%;" decoding="async" src="canva://MAHMYPzsR3E/1" alt="Laptop displaying a portfolio website on a minimalist white desk with pink decorative accessories">
+       <div class="portfolio-overlay absolute inset-0 transition duration-300 flex items-end p-5">
+        <p data-template-id="portfolio-label-3" class="canva-text text-white font-semibold" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Client Work — Website Design</p>
+       </div></button>
+     </div><!-- Hidden carousel slide images for modals --> <img data-template-id="website-slide-1" loading="lazy" class="hidden" src="canva://MAHLPvUFzKM/1" alt="Contact page design with a woman in a cozy setting"> <img data-template-id="website-slide-2" loading="lazy" class="hidden" src="canva://MAHLPn6RwSw/1" alt="Services page with pink design and decorative elements"> <img data-template-id="website-slide-3" loading="lazy" class="hidden" src="canva://MAHLPj8cxXc/1" alt="Brands portfolio showcasing logo clients"> <img data-template-id="website-slide-4" loading="lazy" class="hidden" src="canva://MAHLPt0WgVU/1" alt="About page with creator profile and photo"> <img data-template-id="website-slide-5" loading="lazy" class="hidden" src="canva://MAHLPlnZgOk/1" alt="Hero section with Laura Kate Womack UGC creator branding"> <img data-template-id="print-slide-1" loading="lazy" class="hidden" src="canva://MAHLP4GP5Yo/1" alt="Casa Sea La Vie vacation rental brochure and business card mockup"> <img data-template-id="print-slide-2" loading="lazy" class="hidden" src="canva://MAHLP0rMLls/1" alt="Horses of Hope nonprofit brochure with services and volunteer information"> <img data-template-id="print-slide-3" loading="lazy" class="hidden" src="canva://MAHLP532sFw/1" alt="Horses of Hope Caballos de Esperanza trifold brochure"> <img data-template-id="print-slide-4" loading="lazy" class="hidden" src="canva://MAHLP9JKh7I/1" alt="Gala event program brochure with gold and white design"> <img data-template-id="print-slide-5" loading="lazy" class="hidden" src="canva://MAHLP566ApE/1" alt="Horses of Hope custom t-shirt design with tropical palm logo"> <img data-template-id="portfolio-image-5" loading="lazy" class="hidden" src="canva://MAHLP4GP5Yo/1" alt="Casa Sea La Vie vacation rental brochure and business card mockup">
+    </div>
+   </section>
+   <section id="testimonials" data-template-id="testimonials-section" class="canva-section section-pad" style="background: rgb(47, 62, 70);">
+    <div class="max-w-5xl mx-auto text-center">
+     <p data-template-id="testimonials-kicker" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold mb-4" style="color: rgb(255, 196, 214); font-weight: 700; font-style: normal; font-size: 16px;">Kind words</p>
+     <h2 data-template-id="testimonials-title" class="canva-text display" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 24px;">What Our Clients Say</h2>
+     <div class="relative mt-14 px-8 md:px-16">
+      <button id="prevTestimonial" class="absolute left-0 top-1/2 -translate-y-1/2 rounded-full border border-white/20 p-3 text-white hover:bg-white/10 focus-ring" aria-label="Previous testimonial"> <i data-lucide="chevron-left" class="w-5 h-5"></i> </button> <button id="nextTestimonial" class="absolute right-0 top-1/2 -translate-y-1/2 rounded-full border border-white/20 p-3 text-white hover:bg-white/10 focus-ring" aria-label="Next testimonial"> <i data-lucide="chevron-right" class="w-5 h-5"></i> </button>
+      <div class="testimonial-slide active">
+       <div data-template-id="quote-mark-1" class="canva-text display text-7xl leading-none" style="color: rgb(254, 121, 61); font-weight: 400; font-style: normal; font-size: 16px;">“</div>
+       <p data-template-id="testimonial-copy-1" class="canva-text italic text-xl leading-9 max-w-3xl mx-auto" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">We've been working with Kalite Media for almost two years, and they've truly become a vital part of our social media presence. Their work is flawless, and our engagement has soared. Highly recommend!</p>
+       <p data-template-id="testimonial-name-1" class="canva-text mt-7 text-xs uppercase tracking-[0.18em] font-semibold" style="color: rgb(255, 196, 214); font-weight: 700; font-style: normal; font-size: 16px;">Chrissy Laughlin</p>
+       <p data-template-id="testimonial-role-1" class="canva-text mt-2 text-sm opacity-75" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">Founder, Remedy Bloom</p>
+      </div>
+      <div class="testimonial-slide">
+       <div data-template-id="quote-mark-2" class="canva-text display text-7xl leading-none" style="color: rgb(254, 121, 61); font-weight: 400; font-style: normal; font-size: 16px;">“</div>
+       <p data-template-id="testimonial-copy-2" class="canva-text italic text-xl leading-9 max-w-3xl mx-auto" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">Kalite Media is an absolute joy to work with! Professional, polite, and with a passionate dedication to the project. Would highly recommend to anyone looking for a positive design work experience!</p>
+       <p data-template-id="testimonial-name-2" class="canva-text mt-7 text-xs uppercase tracking-[0.18em] font-semibold" style="color: rgb(255, 196, 214); font-weight: 700; font-style: normal; font-size: 16px;">Stella Peg Carruthers</p>
+       <p data-template-id="testimonial-role-2" class="canva-text mt-2 text-sm opacity-75" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">Author</p>
+      </div>
+      <div class="testimonial-slide">
+       <div data-template-id="quote-mark-3" class="canva-text display text-7xl leading-none" style="color: rgb(254, 121, 61); font-weight: 400; font-style: normal; font-size: 16px;">“</div>
+       <p data-template-id="testimonial-copy-3" class="canva-text italic text-xl leading-9 max-w-3xl mx-auto" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">Kalite Media - what a gem! We worked together on three projects, all of which she excelled in. She produced a beautiful logo, a whole selection of Instagram templates that I can't wait to put to good use, and a digital download redesign that was long overdue. Kalite Media was happy to make any changes I requested and did so, FAST. I will absolutely be looking to work with Kalite Media in the future and recommend you should too!</p>
+       <p data-template-id="testimonial-name-3" class="canva-text mt-7 text-xs uppercase tracking-[0.18em] font-semibold" style="color: rgb(255, 196, 214); font-weight: 700; font-style: normal; font-size: 16px;">Jade Sumner</p>
+       <p data-template-id="testimonial-role-3" class="canva-text mt-2 text-sm opacity-75" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">Copywriter</p>
+      </div>
+      <div class="testimonial-slide">
+       <div data-template-id="quote-mark-4" class="canva-text display text-7xl leading-none" style="color: rgb(254, 121, 61); font-weight: 400; font-style: normal; font-size: 16px;">\u201d</div>
+       <p data-template-id="testimonial-copy-4" class="canva-text italic text-xl leading-9 max-w-3xl mx-auto" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">We've been partners with Kalite Media for close to a year now. They've done some product photography and videography for our social media accounts. Every time they delivered on their promise - the content was unique, artistic and fun. The owner is very responsive and a total delight to work with!</p>
+       <p data-template-id="testimonial-name-4" class="canva-text mt-7 text-xs uppercase tracking-[0.18em] font-semibold" style="color: rgb(255, 196, 214); font-weight: 700; font-style: normal; font-size: 16px;">Pawsomely Healthy Dogs</p>
+       <p data-template-id="testimonial-role-4" class="canva-text mt-2 text-sm opacity-75" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">Creative &amp; Content Partner</p>
+      </div>
+      <div class="flex justify-center gap-3 mt-8">
+       <button class="dot active w-2.5 h-2.5 rounded-full bg-white/35 transition" data-slide="0" aria-label="Go to testimonial 1"></button> <button class="dot w-2.5 h-2.5 rounded-full bg-white/35 transition" data-slide="1" aria-label="Go to testimonial 2"></button> <button class="dot w-2.5 h-2.5 rounded-full bg-white/35 transition" data-slide="2" aria-label="Go to testimonial 3"></button> <button class="dot w-2.5 h-2.5 rounded-full bg-white/35 transition" data-slide="3" aria-label="Go to testimonial 4"></button>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="contact" class="section-pad">
+    <div class="max-w-3xl mx-auto">
+     <div class="text-center mb-12">
+      <p data-template-id="contact-kicker" class="canva-text uppercase tracking-[0.22em] text-xs font-semibold mb-4" style="color: rgb(254, 121, 61); font-weight: 700; font-style: normal; font-size: 16px;">Let's chat</p>
+      <h2 data-template-id="contact-title" class="canva-text display" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 24px;">Ready When You Are</h2>
+      <p data-template-id="contact-subtitle" class="canva-text mt-5 leading-7" style="color: rgba(47, 62, 70, 0.74); font-weight: 400; font-style: normal; font-size: 16px;">Ready to stop putting it off? Fill out the form below and we'll be in touch.</p>
+     </div>
+     <form id="contactForm" class="rounded-[28px] bg-white p-6 md:p-8 soft-shadow">
+      <div class="grid md:grid-cols-2 gap-5">
+       <div>
+        <label data-template-id="label-name" for="name" class="canva-text block text-sm font-semibold mb-2" style="color: rgb(47, 62, 70); font-weight: 600; font-style: normal; font-size: 16px;">Your Name</label> <input id="name" name="name" type="text" required="" class="w-full rounded-2xl border border-[#aecba9] bg-[#fffdfc] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#fe793d]/30">
+       </div>
+       <div>
+        <label data-template-id="label-email" for="email" class="canva-text block text-sm font-semibold mb-2" style="color: rgb(47, 62, 70); font-weight: 600; font-style: normal; font-size: 16px;">Your Email</label> <input id="email" name="email" type="email" required="" class="w-full rounded-2xl border border-[#aecba9] bg-[#fffdfc] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#fe793d]/30">
+       </div>
+      </div>
+      <div class="mt-5">
+       <label data-template-id="label-business" for="business" class="canva-text block text-sm font-semibold mb-2" style="color: rgb(47, 62, 70); font-weight: 600; font-style: normal; font-size: 16px;">Business Name (optional)</label> <input id="business" name="business" type="text" class="w-full rounded-2xl border border-[#aecba9] bg-[#fffdfc] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#fe793d]/30">
+      </div>
+      <div class="mt-5">
+       <label data-template-id="label-help" for="help" class="canva-text block text-sm font-semibold mb-2" style="color: rgb(47, 62, 70); font-weight: 600; font-style: normal; font-size: 16px;">What do you need help with?</label> <select id="help" name="help" required="" class="w-full rounded-2xl border border-[#aecba9] bg-[#fffdfc] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#fe793d]/30"> <option data-template-id="option-default" style="font-weight: 400; font-style: normal; font-size: 16px;">Select one</option> <option data-template-id="option-social" style="font-weight: 400; font-style: normal; font-size: 16px;">Social Media Management</option> <option data-template-id="option-website" style="font-weight: 400; font-style: normal; font-size: 16px;">Website Design</option> <option data-template-id="option-graphic" style="font-weight: 400; font-style: normal; font-size: 16px;">Graphic Design</option> <option data-template-id="option-portfolio" style="font-weight: 400; font-style: normal; font-size: 16px;">Portfolio Design</option> <option data-template-id="option-admin" style="font-weight: 400; font-style: normal; font-size: 16px;">Admin Support</option> <option data-template-id="option-unsure" style="font-weight: 400; font-style: normal; font-size: 16px;">Not Sure Yet</option> </select>
+      </div>
+      <div class="mt-5">
+       <label data-template-id="label-project" for="project" class="canva-text block text-sm font-semibold mb-2" style="color: rgb(47, 62, 70); font-weight: 600; font-style: normal; font-size: 16px;">Tell us a little about your project</label> <textarea id="project" name="project" rows="5" required="" class="w-full rounded-2xl border border-[#aecba9] bg-[#fffdfc] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#fe793d]/30 resize-none"></textarea>
+      </div><button data-template-id="contact-submit" type="submit" class="canva-button mt-6 rounded-full px-7 py-4 font-semibold transition duration-300 hover:-translate-y-1 hover:opacity-90 focus-ring" style="background: rgb(254, 121, 61); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Send It Over</button>
+      <p id="formSuccess" data-template-id="contact-success" class="canva-text hidden mt-5 text-sm font-semibold" style="color: rgb(47, 122, 75); font-weight: 600; font-style: normal; font-size: 16px;">Thanks! Your message is ready to go — we'll be in touch soon.</p>
+     </form>
+     <p class="text-center mt-7 text-sm">Prefer email? <a href="mailto:kalitemediagroup@gmail.com" data-template-id="contact-email" class="canva-link no-underline focus-ring" style="color: rgb(254, 121, 61); font-weight: 600; font-style: normal; font-size: 16px;">Reach us at kalitemediagroup@gmail.com</a></p>
+    </div>
+   </section>
+  </main>
+  <footer data-template-id="footer-section" class="canva-footer px-5 md:px-8 py-12" style="background: rgb(47, 62, 70);">
+   <div class="max-w-6xl mx-auto text-center">
+    <div data-template-id="footer-logo" class="canva-text display text-[30px]" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">Kalite Media</div>
+    <p data-template-id="footer-tagline" class="canva-text mt-3" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">Helping your business show up like it means it.</p>
+    <div class="flex justify-center gap-4 mt-7">
+     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 focus-ring" aria-label="Instagram"> <i data-lucide="instagram" class="w-4 h-4"></i> </a> <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 focus-ring" aria-label="Facebook"> <i data-lucide="facebook" class="w-4 h-4"></i> </a> <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 focus-ring" aria-label="LinkedIn"> <i data-lucide="linkedin" class="w-4 h-4"></i> </a>
+    </div>
+    <p data-template-id="footer-copyright" class="canva-text text-xs mt-8 opacity-70" style="color: rgb(251, 246, 243); font-weight: 400; font-style: normal; font-size: 16px;">© 2026 Kalite Media. All rights reserved.</p>
+   </div>
+  </footer>
+  <div id="portfolioModal" class="fixed inset-0 z-[100] bg-black/70 p-4 flex items-center justify-center hidden">
+   <div class="relative max-w-4xl w-full bg-[#fbf6f3] rounded-[24px] overflow-hidden">
+    <button id="closeModal" class="absolute right-4 top-4 z-10 bg-white/90 rounded-full p-2 focus-ring" aria-label="Close portfolio preview"> <i data-lucide="x" class="w-5 h-5"></i> </button>
+    <div id="modalContent"></div>
+   </div>
+  </div>
+  <script src="/_sdk/c939c145c3c74230.editing_sdk.js" defer="" integrity="sha512-jh2pv/gl9Gzzn5dxfzwQO4wkqtnAQIim+LIUDYfVu2cdqPkQV2MqbjsDUW5IYbrSZFjRlOBrIWzlvWDXQYxOjg=="></script>
+  <script>
+    // Handle all anchor links with smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '#top') return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuButton.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        menuButton.setAttribute('aria-expanded', String(!isHidden));
+        menuButton.innerHTML = isHidden ? '<i data-lucide="menu" class="w-5 h-5"></i>' : '<i data-lucide="x" class="w-5 h-5"></i>';
+        lucide.createIcons();
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const href = link.getAttribute('href');
+          mobileMenu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.innerHTML = '<i data-lucide="menu" class="w-5 h-5"></i>';
+          lucide.createIcons();
+          if (href && href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.querySelector('button').addEventListener('click', () => {
+          card.classList.toggle('open');
+        });
+      });
+
+      const slides = [...document.querySelectorAll('.testimonial-slide')];
+      const dots = [...document.querySelectorAll('.dot')];
+      let currentSlide = 0;
+      let carouselTimer;
+
+      function showSlide(index){
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+      }
+      function startCarousel(){
+        carouselTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
+      }
+      function resetCarousel(){
+        clearInterval(carouselTimer);
+        startCarousel();
+      }
+      document.getElementById('nextTestimonial').addEventListener('click', () => {
+        showSlide(currentSlide + 1); resetCarousel();
+      });
+      document.getElementById('prevTestimonial').addEventListener('click', () => {
+        showSlide(currentSlide - 1); resetCarousel();
+      });
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          showSlide(Number(dot.dataset.slide));
+          resetCarousel();
+        });
+      });
+      startCarousel();
+
+      const modal = document.getElementById('portfolioModal');
+      const modalContent = document.getElementById('modalContent');
+      const portfolioCards = [...document.querySelectorAll('.portfolio-card')];
+
+      portfolioCards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+          if (index === 0) {
+            // Social Media case studies
+            const studies = [
+              {
+                title: 'Casa Sea La Vie',
+                subtitle: 'Vacation Rental Social Media Marketing',
+                imageId: 'portfolio-image-5',
+                pdfUrl: 'https://drive.google.com/file/d/1wvtDFkbUb2Ukai2bp69aOQBgfN7B3tmd/view?usp=sharing'
+              },
+              {
+                title: 'Horses of Hope / Caballos de Esperanza',
+                subtitle: 'Increasing awareness, engagement, and support for a non-profit',
+                imageId: 'print-slide-2',
+                pdfUrl: 'https://drive.google.com/file/d/1EW8tQxuUogmHI0antQnBFEXZskCW2Gcp/view?usp=sharing'
+              }
+            ];
+            modalContent.innerHTML = `
+              <div class="p-8">
+                <h3 class="text-2xl font-bold text-[#2f3e46] mb-8 text-center">Case Studies</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                  ${studies.map(study => {
+                    const img = document.querySelector(`[data-template-id="${study.imageId}"]`);
+                    const imgSrc = img ? img.src : '';
+                    return `
+                    <a href="${study.pdfUrl}" target="_blank" rel="noopener noreferrer" class="group block rounded-lg overflow-hidden soft-shadow transition-all duration-300 hover:-translate-y-1 hover:opacity-90">
+                      <div class="relative h-48 overflow-hidden">
+                        <img src="${imgSrc}" alt="${study.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" decoding="async" loading="lazy">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300"></div>
+                      </div>
+                      <div class="bg-white p-5">
+                        <h4 class="font-bold text-[#2f3e46] text-lg mb-2">${study.title}</h4>
+                        <p class="text-sm text-[#2f3e46]/75 mb-4">${study.subtitle}</p>
+                        <div class="inline-flex items-center gap-2 text-sm font-semibold text-[#fe793d]">
+                          View PDF <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                      </div>
+                    </a>
+                  `;
+                  }).join('')}
+                </div>
+              </div>
+            `;
+            lucide.createIcons();
+          } else if (index === 1) {
+            // Print design portfolio - carousel slideshow
+            const slides = [
+              { id: 'print-slide-1' },
+              { id: 'print-slide-2' },
+              { id: 'print-slide-3' },
+              { id: 'print-slide-4' },
+              { id: 'print-slide-5' }
+            ];
+            
+            let currentSlideIndex = 0;
+            
+            function renderSlide() {
+              const slide = slides[currentSlideIndex];
+              const img = document.querySelector(`[data-template-id="${slide.id}"]`);
+              const src = img ? img.src : '';
+              const alt = img ? img.alt : 'Print design slide';
+              
+              modalContent.innerHTML = `
+                <div class="relative flex flex-col items-center">
+                  <div class="w-full bg-white p-8">
+                    <img class="w-full max-h-[60vh] object-contain rounded-lg shadow-md" src="${src}" alt="${alt}" decoding="async" loading="lazy">
+                  </div>
+                  <div class="flex items-center justify-between w-full px-8 py-6 bg-[#fbf6f3]">
+                    <button class="print-prev-btn rounded-full border border-[#2f3e46] p-2 hover:bg-[#2f3e46]/10 focus-ring" aria-label="Previous slide">
+                      <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <div class="flex gap-2">
+                      ${slides.map((_, i) => `
+                        <button class="print-dot w-2.5 h-2.5 rounded-full bg-[#2f3e46]/30 transition ${i === 0 ? 'bg-[#2f3e46]' : ''}" data-index="${i}" aria-label="Go to slide ${i + 1}"></button>
+                      `).join('')}
+                    </div>
+                    <button class="print-next-btn rounded-full border border-[#2f3e46] p-2 hover:bg-[#2f3e46]/10 focus-ring" aria-label="Next slide">
+                      <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                  </div>
+                </div>
+              `;
+              
+              lucide.createIcons();
+              
+              // Attach event listeners
+              document.querySelectorAll('.print-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                  currentSlideIndex = parseInt(dot.dataset.index);
+                  renderSlide();
+                });
+              });
+              
+              document.querySelector('.print-prev-btn').addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                renderSlide();
+              });
+              
+              document.querySelector('.print-next-btn').addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                renderSlide();
+              });
+            }
+            
+            renderSlide();
+          } else if (index === 2) {
+            // Website design portfolio - carousel slideshow
+            const slides = [
+              { id: 'website-slide-1' },
+              { id: 'website-slide-2' },
+              { id: 'website-slide-3' },
+              { id: 'website-slide-4' },
+              { id: 'website-slide-5' }
+            ];
+            
+            let currentSlideIndex = 0;
+            
+            function renderSlide() {
+              const slide = slides[currentSlideIndex];
+              const img = document.querySelector(`[data-template-id="${slide.id}"]`);
+              const src = img ? img.src : '';
+              const alt = img ? img.alt : 'Website design slide';
+              
+              modalContent.innerHTML = `
+                <div class="relative flex flex-col items-center">
+                  <div class="w-full bg-white p-8">
+                    <img class="w-full max-h-[60vh] object-cover object-bottom rounded-lg shadow-md" src="${src}" alt="${alt}" decoding="async" loading="lazy">
+                  </div>
+                  <div class="flex items-center justify-between w-full px-8 py-6 bg-[#fbf6f3]">
+                    <button class="website-prev-btn rounded-full border border-[#2f3e46] p-2 hover:bg-[#2f3e46]/10 focus-ring" aria-label="Previous slide">
+                      <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <div class="flex gap-2">
+                      ${slides.map((_, i) => `
+                        <button class="website-dot w-2.5 h-2.5 rounded-full bg-[#2f3e46]/30 transition ${i === 0 ? 'bg-[#2f3e46]' : ''}" data-index="${i}" aria-label="Go to slide ${i + 1}"></button>
+                      `).join('')}
+                    </div>
+                    <button class="website-next-btn rounded-full border border-[#2f3e46] p-2 hover:bg-[#2f3e46]/10 focus-ring" aria-label="Next slide">
+                      <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                  </div>
+                </div>
+              `;
+              
+              lucide.createIcons();
+              
+              // Attach event listeners
+              document.querySelectorAll('.website-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                  currentSlideIndex = parseInt(dot.dataset.index);
+                  renderSlide();
+                });
+              });
+              
+              document.querySelector('.website-prev-btn').addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                renderSlide();
+              });
+              
+              document.querySelector('.website-next-btn').addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                renderSlide();
+              });
+            }
+            
+            renderSlide();
+          } else {
+            const img = card.querySelector('img');
+            const caption = card.querySelector('p');
+            modalContent.innerHTML = `
+              <img class="w-full max-h-[70vh] object-cover" decoding="async" loading="lazy">
+              <div class="p-5">
+                <p class="font-semibold"></p>
+              </div>
+            `;
+            modalContent.querySelector('img').src = img.src;
+            modalContent.querySelector('img').alt = img.alt || '';
+            modalContent.querySelector('p').textContent = caption.textContent;
+          }
+          modal.classList.remove('hidden');
+        });
+      });
+
+      function closeModal(){
+        modal.classList.add('hidden');
+        modalContent.innerHTML = '';
+      }
+      document.getElementById('closeModal').addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if(e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+
+      document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        if(!form.checkValidity()){
+          form.reportValidity();
+          return;
+        }
+        document.getElementById('formSuccess').classList.remove('hidden');
+        form.reset();
+      });
+    });
+  </script>
+ 
+</body></html>
