@@ -288,8 +288,8 @@ We basically handle the stuff you keep putting off.</p>
   <script src="/_sdk/c939c145c3c74230.editing_sdk.js" defer="" integrity="sha512-jh2pv/gl9Gzzn5dxfzwQO4wkqtnAQIim+LIUDYfVu2cdqPkQV2MqbjsDUW5IYbrSZFjRlOBrIWzlvWDXQYxOjg=="></script>
   
    <!-- Hidden portfolio images -->
-<img id="casa-sea-la-vie" src="images/house.jpg">
-<img id="horses" src="images/horses.jpg" style="display:none;">
+<img id="casa-sea-la-vie" src="images/house.jpg" style="display:none;>
+<img id="horses" src="images/horses.jpg" style="display:none";>
    
   <script>
     // Handle all anchor links with smooth scroll
@@ -398,7 +398,7 @@ We basically handle the stuff you keep putting off.</p>
                 <h3 class="text-2xl font-bold text-[#2f3e46] mb-8 text-center">Case Studies</h3>
                 <div class="grid md:grid-cols-2 gap-6">
                   ${studies.map(study => {
-                    const img = document.querySelector(`[data-template-id="${study.imageId}"]`);
+                    const img = document.getElementById(study.imageId);
                     const imgSrc = img ? img.src : '';
                     return `
                     <a href="${study.pdfUrl}" target="_blank" rel="noopener noreferrer" class="group block rounded-lg overflow-hidden soft-shadow transition-all duration-300 hover:-translate-y-1 hover:opacity-90">
