@@ -192,7 +192,7 @@ together.</h1>
       <h2 data-template-id="work-title" class="canva-text display" style="color: rgb(47, 62, 70); font-weight: 400; font-style: normal; font-size: 24px;">Stuff We've Made</h2>
       <p data-template-id="work-intro" class="canva-text mt-5 leading-7" style="color: rgba(47, 62, 70, 0.74); font-weight: 400; font-style: normal; font-size: 16px;">A little peek at what we've been building for our clients.</p>
      </div>
-     <div class="grid md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+     <div class="grid md:grid-cols-4 gap-5 max-w-6xl mx-auto">
   <!--Social Media Portfolio-->
       <button class="portfolio-card relative overflow-hidden rounded-[24px] group focus-ring" data-index="0" type="button"> <img data-template-id="portfolio-image-1" loading="lazy" class="canva-image w-full h-72 object-cover" decoding="async" src="images/social-media.png" alt="Smartphone with heart notification icons against a pink background, representing social media engagement">
         <div class="portfolio-overlay absolute inset-0 transition duration-300 flex items-end p-5">
@@ -581,6 +581,85 @@ together.</h1>
               });
               
               document.querySelector('.website-next-btn').addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                renderSlide();
+              });
+            }
+            
+            renderSlide();
+                      } else if (index === 3) {
+            // Branding portfolio - carousel slideshow
+            const slides = [
+              { id: 'branding-slide-1' },
+              { id: 'branding-slide-2' },
+              { id: 'branding-slide-3' },
+              { id: 'branding-slide-4' }
+            ];
+            
+            let currentSlideIndex = 0;
+            
+            function renderSlide() {
+              const slide = slides[currentSlideIndex];
+              const img = document.querySelector(`[data-template-id="${slide.id}"]`);
+              const src = img ? img.src : '';
+              const alt = img ? img.alt : 'Branding design slide';
+              
+              modalContent.innerHTML = `
+                <div class="relative flex flex-col items-center">
+                  <div class="w-full bg-white p-8">
+                    <img
+                      class="w-full max-h-[60vh] object-contain rounded-lg shadow-md"
+                      src="${src}"
+                      alt="${alt}"
+                      decoding="async"
+                      loading="lazy"
+                    >
+                  </div>
+
+                  <div class="flex items-center justify-between w-full px-8 py-6 bg-[#fbf6f3]">
+                    <button
+                      class="branding-prev-btn rounded-full border border-[#2f3e46] p-2 hover:bg-[#2f3e46]/10 focus-ring"
+                      aria-label="Previous slide"
+                    >
+                      <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+
+                    <div class="flex gap-2">
+                      ${slides.map((_, i) => `
+                        <button
+                          class="branding-dot w-2.5 h-2.5 rounded-full bg-[#2f3e46]/30 transition ${i === 0 ? 'bg-[#2f3e46]' : ''}"
+                          data-index="${i}"
+                          aria-label="Go to slide ${i + 1}"
+                        ></button>
+                      `).join('')}
+                    </div>
+
+                    <button
+                      class="branding-next-btn rounded-full border border-[#2f3e46] p-2 hover:bg-[#2f3e46]/10 focus-ring"
+                      aria-label="Next slide"
+                    >
+                      <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                  </div>
+                </div>
+              `;
+              
+              lucide.createIcons();
+              
+              // Attach event listeners
+              document.querySelectorAll('.branding-dot').forEach(dot => {
+                dot.addEventListener('click', () => {
+                  currentSlideIndex = parseInt(dot.dataset.index);
+                  renderSlide();
+                });
+              });
+              
+              document.querySelector('.branding-prev-btn').addEventListener('click', () => {
+                currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                renderSlide();
+              });
+              
+              document.querySelector('.branding-next-btn').addEventListener('click', () => {
                 currentSlideIndex = (currentSlideIndex + 1) % slides.length;
                 renderSlide();
               });
